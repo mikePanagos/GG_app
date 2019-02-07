@@ -1,0 +1,31 @@
+{
+    "nativescript": {
+        "id": "org.nativescript.GreatGreen",
+        "tns-android": {
+            "version": "5.1.0"
+        },
+        "tns-ios": {
+            "version": "5.1.1"
+        }
+    },
+    "description": "NativeScript Application",
+    "license": "SEE LICENSE IN <your-license-filename>",
+    "repository": "<fill-your-repository-here>",
+    "scripts": {
+        "lint": "eslint \"app/**/*.js\""
+    },
+    "dependencies": {
+        "nativescript-localstorage": "2.0.0",
+        "nativescript-theme-core": "~1.0.4",
+        "nativescript-ui-sidedrawer": "~5.1.0",
+        "rxjs": "~6.3.0",
+        "tns-core-modules": "~5.1.0"
+    },
+    "devDependencies": {
+        "eslint": "5.13.0",
+        "nativescript-dev-sass": "~1.6.0",
+        "nativescript-dev-webpack": "~0.19.0"
+    },
+    "gitHead": "7019c72a25b784ba304d3a198f4c1fc37add6536",
+    "readme": "NativeScript Application"
+}

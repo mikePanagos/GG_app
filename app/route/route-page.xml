@@ -1,0 +1,32 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar class="action-bar">
+        <!-- 
+        Use the NavigationButton as a side-drawer button in Android
+        because ActionItems are shown on the right side of the ActionBar
+        -->
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+        <!-- 
+        Use the ActionItem for IOS with position set to left. Using the
+        NavigationButton as a side-drawer button in iOS is not possible,
+        because its function is to always navigate back in the application.
+        -->
+        <ActionItem icon="res://navigation/menu" 
+            android:visibility="collapsed" 
+            tap="onDrawerButtonTap"
+            ios.position="left">
+        </ActionItem>
+        <Label class="action-bar-title" text="route"></Label>
+    </ActionBar>
+
+    <StackLayout id="form" class="page-content"
+            orientation="vertical">
+        <Label class="text"   height="100" text="{{'Question '+questionNum+'!!!!'}}"></Label>
+        <Label class="text"   height="100" text="{{question}}"></Label>
+        <TextField  height="100" text="{{ textFieldValue }}" hint="Enter text..." />
+        <Label   class="text" text="{{' '+answer}}"></Label>
+        <Button text="Button" tap="{{ onButtonTap }}" class=" btn-rounded-sm"/>
+    </StackLayout>
+</Page>
