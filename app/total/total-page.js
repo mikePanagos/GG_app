@@ -1,10 +1,10 @@
 const app = require("tns-core-modules/application");
 
-const BrowseViewModel = require("./total-view-model");
+const TotalViewModel = require("./total-view-model");
 
 function onNavigatingTo(args) {
     const page = args.object;
-    page.bindingContext = new BrowseViewModel();
+    page.bindingContext = new TotalViewModel();
 }
 
 function onDrawerButtonTap(args) {

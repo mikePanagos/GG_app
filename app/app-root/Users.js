@@ -1,7 +1,17 @@
 const localStorage = require("nativescript-localstorage");
 
+let User = {
+    totalpoint:0,
+    route:[2, 1],
+    totalNumOfRoute:2,
+    masterCopyRoute:[2, 1],
+    currentObj:0,
+    numCompleted:0,
+    password:"1234",
+    TeamName:"red"
+ };
 function init () {
-    let User = {
+    let initUser = {
         totalpoint:0,
         route:[2, 1],
         totalNumOfRoute:2,
@@ -11,10 +21,13 @@ function init () {
         password:"1234",
         TeamName:"red"
      };
-    localStorage.setItem("user", User);
+         console.log("in init");
+
+        localStorage.setItemObject("user", initUser);
+        localStorage.setItem("init", true);
+
 
 }
-
 
 let questions = [
      {
@@ -26,7 +39,9 @@ let questions = [
         a:"left"
     }
 ];
-
+let saveUser = function() {
+    localStorage.setItemObject("user", User);
+};
 
 //gets the route for the user
 let getRoute = function () {
@@ -37,7 +52,7 @@ let getRoute = function () {
 let getTotalNumOfRoute = () => localStorage.getItem("user").totalNumOfRoute;
 //remove elemete 0 from route
 let removeFirstInRoute = function () {
-    localStorage.getItem("user").route.shift();
+    User.route.shift();
 };
 // gets the question number they are currently working on
 let getCurrentObj = function () {
@@ -47,19 +62,20 @@ let getCurrentObj = function () {
 };
 //sets currentObj
 let setCurrentObj = function () {
-    localStorage.getItem("user").currentObj = localStorage.getItem("user").route[0];
+    User.currentObj = localStorage.getItem("user").route[0];
+    saveUser();
 
 };
 //retruns the number of objs working on
 let getNumCompleted = function () {
-    let b = localStorage.getItem("user");
-    console.log("this obj " + b);
+    // let b = localStorage.getItem("user");
+    // console.log("this obj " + JSON.stringify(b,null,4));
 
     return localStorage.getItem("user").numCompleted;
 
 };
 let numCompletedPlusOne = function () {
-    localStorage.getItem("user").numCompleted++;
+    User.numCompleted++;
 
 };
 //checks passward and username
@@ -92,7 +108,9 @@ let getUserPoints = function () {
 let setUserPoints = function (newTotal) {
     console.log("points =" + newTotal);
 
-    localStorage.getItem("user").totalpoint = newTotal;
+    User.totalpoint = newTotal;
+    saveUser();
+
 };
 //when they got a clue solved or ran out of trys
 let finished = function() {
@@ -100,8 +118,20 @@ let finished = function() {
     removeFirstInRoute();
     setCurrentObj();
 };
+let game = function() {
+    if (localStorage.getItem("user").numCompleted < localStorage.getItem("user").totalNumOfRoute) {
+        console.log("true");
+        
+        return true;
+    } else {
+        console.log("false");
+
+        return false;
+    }
+};
 
 module.exports = {
+    game,
     init,
     setUserPoints,
     getUserPoints,

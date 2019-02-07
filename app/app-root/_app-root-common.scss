@@ -31,10 +31,10 @@ $sidedrawer-list-icon-size: 20;
     }
 
     .sidedrawer-header {
-        background-color: $ab-background;
+        background-color:green;
 
         .sidedrawer-header-brand {
-            color: $ab-color;
+            color:green;
         }
     }
 
@@ -59,7 +59,7 @@ $sidedrawer-list-icon-size: 20;
             background-color: $item-active-background;
 
             Label {
-                color: $item-active-color;
+                color: green;
             }
         }
     }

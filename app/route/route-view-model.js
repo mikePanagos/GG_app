@@ -15,12 +15,12 @@ function SearchViewModel() {
         textFieldValue:"",
         answer:"",
         onButtonTap(args) {
-            if ((user.getNumCompleted() < user.getTotalNumOfRoute()) && trys < 0) {
+            if (user.game()) {
                 const text = this.get("textFieldValue").toLowerCase();
                 console.log(text);
                 if (text === user.getQuestions(user.getRoute()[0] - 1).a) {
                     this.set("answer", "yes you got it");
-                    console.log("correct "+user.getUserPoints()+" "+(trys * 5));
+                    console.log("correct " + user.getUserPoints() + " " + (trys * 5));
                     user.finished();
                     user.setUserPoints(user.getUserPoints() + (trys * 5));
                     trys = 3;
