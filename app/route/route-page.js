@@ -1,5 +1,4 @@
-const app = require("tns-core-modules/application");
-const user = require("../app-root/Users");
+const app = require("tns-core-modules/application");;
 const RouteViewModel = require("./route-view-model");
 
 function onNavigatingTo(args) {

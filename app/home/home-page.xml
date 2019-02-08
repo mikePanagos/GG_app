@@ -23,6 +23,7 @@
     </ActionBar>
 
     <StackLayout class="page-content">
+        <Image src="res://clue"></Image>
         <Label class="page-icon fa" text="&#xf015;"></Label>
         <Label class="page-placeholder" text="{{'the saved word is '+words}}"></Label>
         <TextField text="{{ textFieldValue }}" hint="Enter text..." />

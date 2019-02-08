@@ -3,7 +3,7 @@ RadSideDrawer is a UI component part of the Progress NativeScript UI set of comp
 Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
 http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/getting-started
 -->
-<nsDrawer:RadSideDrawer  id="sideDrawer" xmlns:nsDrawer="nativescript-ui-sidedrawer" loaded="onLoaded">
+<nsDrawer:RadSideDrawer  class="page"  id="sideDrawer" xmlns:nsDrawer="nativescript-ui-sidedrawer" loaded="onLoaded">
     <nsDrawer:RadSideDrawer.drawerTransition>
         <nsDrawer:SlideInOnTopTransition/>
     </nsDrawer:RadSideDrawer.drawerTransition>
@@ -49,11 +49,13 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
 
                     <StackLayout class="hr-light"></StackLayout>
                     <!-- settings -->
-                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Settings' ? ' selected': '') }}"
-                        route="settings/settings-page" title="Settings" tap="onNavigationItemTap">
+                     <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Logout' ? ' selected': '') }}"
+                        route="logout/logout-page" title="Logout" tap="onNavigationItemTap">
                         <Label row="0" col="0" text="&#xf013;" class="fa" />
-                        <Label row="0" col="1" text="Settings" class="p-r-10" />
+                        <Label row="0" col="1" text="Logout" class="p-r-10" />
                     </GridLayout>
+
+
                 </StackLayout>
             </ScrollView>
         </GridLayout>
