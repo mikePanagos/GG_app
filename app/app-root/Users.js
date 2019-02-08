@@ -89,10 +89,9 @@ let checkPasswords = function (p, t) {
 };
 
 //gets the ith question
-let getQuestions = function (i) {
-    console.log("get questions  " + JSON.stringify(questions[i], null, 4));
-
-    return questions[i];
+let getQuestions = function () {
+    
+    return questions[localStorage.getItem("user").route[0] - 1];
 
 };
 
@@ -129,9 +128,15 @@ let game = function() {
         return false;
     }
 };
+let progress = () => {
+    console.log("progress is " + getNumCompleted() / getTotalNumOfRoute() * 100);
+    
+   return getNumCompleted() / getTotalNumOfRoute() * 100;
+};
 
 module.exports = {
     game,
+    progress,
     init,
     setUserPoints,
     getUserPoints,

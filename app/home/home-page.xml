@@ -27,5 +27,7 @@
         <Label class="page-placeholder" text="{{'the saved word is '+words}}"></Label>
         <TextField text="{{ textFieldValue }}" hint="Enter text..." />
         <Button text="Button" tap="{{ onButtonTap }}" />
+        <Progress value="{{ progressValue }}" maxValue="100" height="300px" />
+
     </StackLayout>
 </Page>

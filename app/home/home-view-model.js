@@ -9,6 +9,7 @@ function HomeViewModel() {
     const viewModel = observableModule.fromObject({
         /* Add your view model properties here */
         textFieldValue: "",
+        progressValue:user.progress(),
         words: (localStorage.getItem("word")) ? localStorage.getItem("word") : "",
         onButtonTap(args) {
             if (this.get("textFieldValue") !== "") {

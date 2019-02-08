@@ -28,13 +28,13 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                     <!-- route -->
                     <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Route' ? ' selected': '') }}"
                         route="route/route-page" title="Route" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf002;" class="fa" />
+                        <Label row="0" col="0" text="&#xf277;" class="fa" />
                         <Label row="0" col="1" text="Route" class="p-r-10" />
                     </GridLayout>
                     <!-- total -->
                     <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Total' ? ' selected': '') }}"
                         route="total/total-page" title="Total" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf1ea;" class="fa" />
+                        <Label row="0" col="0" text="&#xf0d6;" class="fa" />
 
                         <Label row="0" col="1" text="total" class="p-r-10" />
                     </GridLayout>
@@ -43,7 +43,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                     <!-- feats -->
                     <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Featured' ? ' selected': '') }}"
                         route="featured/featured-page" title="Featured" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xe005;" class="fa" />
+                        <Label row="0" col="0" text="&#xf13d;" class="fa" />
                         <Label row="0" col="1" text="Featured" class="p-r-10" />
                     </GridLayout>
 

@@ -11,28 +11,26 @@ function SearchViewModel() {
 
         /* Add your view model properties here */
         questionNum: (user.getNumCompleted() < user.getTotalNumOfRoute()) ? user.getNumCompleted() + 1 : "you finished",
-        question:(user.getNumCompleted() < user.getTotalNumOfRoute()) ? user.getQuestions(user.getRoute()[0] - 1).q : "lo hicimos",
+        question:(user.getNumCompleted() < user.getTotalNumOfRoute()) ? user.getQuestions().q : "lo hicimos",
         textFieldValue:"",
         answer:"",
         onButtonTap(args) {
             if (user.game()) {
                 const text = this.get("textFieldValue").toLowerCase();
                 console.log(text);
-                if (text === user.getQuestions(user.getRoute()[0] - 1).a) {
+                if (text === user.getQuestions().a) {
                     this.set("answer", "yes you got it");
                     console.log("correct " + user.getUserPoints() + " " + (trys * 5));
-                    user.finished();
                     user.setUserPoints(user.getUserPoints() + (trys * 5));
                     trys = 3;
-                    frameModule.topmost().navigate("total/total-page");
+                    frameModule.topmost().navigate("answer/answer-page");
                 } else {
 
                     trys--;
                     if (trys === 0) {
                         this.set("answer", "nope sorry and you ran out of trys");
-                        user.finished();
                         trys = 3;
-                        frameModule.topmost().navigate("total/total-page");
+                        frameModule.topmost().navigate("answer/answer-page");
                     } else {
                         let responce = (`nope try again ${(trys)} trys left`);
                         this.set("textFieldValue", "");
