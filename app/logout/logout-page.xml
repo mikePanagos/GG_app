@@ -1,0 +1,12 @@
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd">
+    <ActionBar class="action-bar">
+        <Label class="action-bar-title" text="Login"></Label>
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout class="p-t-15">
+
+            <Button class="btn btn-primary" text="LOGOUT" tap="onLogButtonTap"></Button>
+        </StackLayout>
+    </ScrollView>
+</Page>
