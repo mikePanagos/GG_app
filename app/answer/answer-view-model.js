@@ -6,6 +6,8 @@ const user = require("../app-root/Users");
 function AnswerViewModel() {
     const viewModel = observableModule.fromObject({
         number: user.getQuestions().a,
+        needsPic:(user.getQuestions().pic === "no") ? "" : user.getQuestions().pic,
+
         onButtonTap(args) {
             console.log("button clicked");
             user.finished();

@@ -23,12 +23,10 @@
     </ActionBar>
 
     <StackLayout class="page-content">
-        <Image src="res://clue"/>
-        <Label class="page-icon fa" text="&#xf015;"></Label>
-        <Label class="page-placeholder" text="{{'the saved word is '+words}}"></Label>
-        <TextField text="{{ textFieldValue }}" hint="Enter text..." />
-        <Button text="Button" tap="{{ onButtonTap }}" />
-        <Progress value="{{ progressValue }}" maxValue="100" height="500px" />
+        <!-- <Image class="cluePic" src="~/pics/clue.png"  stretch="none"/> -->
+        <Label class="page-placeholder words" text="{{'the saved word is '+words}}"></Label>
+        <TextField class="tb" text="{{ textFieldValue }}" hint="Enter text..." />
+        <Button class="but" text="Button" tap="{{ onButtonTap }}" />
 
     </StackLayout>
 </Page>

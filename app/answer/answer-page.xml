@@ -21,9 +21,9 @@
 
 
 
-    <StackLayout orientation="vertical">
-    
-    <label class="text"   height="300" text="{{number}}"></label>
-    <Button text="continue" tap="{{ onButtonTap }}" class=" btn-rounded-sm"/>
+    <StackLayout class="page-content">
+        <Image class="cluePic" src="{{needsPic}}"  stretch="none"/>
+        <label class="page-placeholder words"    text="{{number}}"></label>
+        <Button text="continue" tap="{{ onButtonTap }}" class="btn-rounded-sm but"/>
     </StackLayout>
 </Page>

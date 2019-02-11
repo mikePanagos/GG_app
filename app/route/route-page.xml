@@ -28,5 +28,6 @@
         <TextField  height="100" text="{{ textFieldValue }}" hint="Enter text..." />
         <Label   class="text" text="{{' '+answer}}"></Label>
         <Button text="Button" tap="{{ onButtonTap }}" class=" btn-rounded-sm"/>
+        <Progress value="{{ progressValue }}" maxValue="100" height="500px" />
     </StackLayout>
 </Page>

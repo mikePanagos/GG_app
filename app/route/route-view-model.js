@@ -14,6 +14,7 @@ function SearchViewModel() {
         question:(user.getNumCompleted() < user.getTotalNumOfRoute()) ? user.getQuestions().q : "lo hicimos",
         textFieldValue:"",
         answer:"",
+        progressValue:user.progress(),
         onButtonTap(args) {
             if (user.game()) {
                 const text = this.get("textFieldValue").toLowerCase();

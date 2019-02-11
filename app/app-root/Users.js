@@ -49,11 +49,13 @@ function init () {
 let questions = [
      {
         q:"what is the opposite of left",
-        a:"right"
+        a:"right",
+        pic:"no"
     },
     {
         q:"what is the opposite of right",
-        a:"left"
+        a:"left",
+        pic:"~/pics/clue.png"
     }
 ];
 let saveUser = function() {
@@ -188,6 +190,7 @@ let loggedIn = function () {
 //logs in
 let logIn = function() {
     localStorage.setItem("loggedIn", true);
+    
 };
 //logs out
 let logOut = function() {
